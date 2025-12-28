@@ -1,1 +1,78 @@
 
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #00ff88;
+  font-family: 'Courier New', monospace;
+}
+
+/* NÚCLEO */
+.core {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* TEXTO CENTRAL */
+.signal {
+  text-align: center;
+  letter-spacing: 0.2em;
+  font-size: 1.4rem;
+  opacity: 0.85;
+}
+
+.signal span {
+  display: block;
+  margin: 0.3rem 0;
+}
+
+/* PULSO */
+.pulse {
+  width: 6px;
+  height: 6px;
+  background: #00ff88;
+  border-radius: 50%;
+  margin-top: 30px;
+  animation: pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(2.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+}
+
+/* STATUS */
+.status {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+.status p {
+  margin: 4px 0;
+}
