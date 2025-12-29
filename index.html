@@ -2,117 +2,136 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Planet of Architect</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Planet of Architect — Ambiente de criação digital">
-  <link rel="stylesheet" href="style.css">
+  <title>PLANET OF ARCHITECT</title>
+
+  <style>
+    /* RESET BÁSICO */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #caffdf;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    /* BLOCOS PADRÃO DO PLANETA */
+    .bloco {
+      border: 1px solid rgba(0, 255, 150, 0.25);
+      padding: 24px;
+      margin-bottom: 48px;
+      border-radius: 18px; /* arredondamento moderno */
+      background: rgba(0, 0, 0, 0.65);
+    }
+
+    .bloco h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: #7cffb2;
+      letter-spacing: 1px;
+    }
+
+    .bloco p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    /* ===== BLOCO CYBORG (ISOLADO) ===== */
+    .cyborg-nucleo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 120px 0;
+      text-align: center;
+    }
+
+    .cyborg-nucleo img {
+      max-width: 340px;
+      width: 80%;
+      opacity: 0.92;
+      filter: drop-shadow(0 0 28px rgba(0, 255, 150, 0.4));
+    }
+
+    .cyborg-frase {
+      margin-top: 28px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      color: #7cffb2;
+      opacity: 0.75;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.75rem;
+      opacity: 0.4;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- MATRIX / AMBIENTE -->
-  <canvas id="matrix"></canvas>
+  <main>
 
-  <!-- CAMADA DE CONTEÚDO -->
-  <div class="planet-layer">
-
-    <!-- BLOCO 1 -->
-    <section class="info-block">
-      <h1>PLANET OF ARCHITECT</h1>
+    <!-- BLOCO INTRODUÇÃO -->
+    <section class="bloco">
+      <h2>NÍVEL 0 — NÚCLEO</h2>
       <p>
-        Este é um ambiente de criação digital.<br>
-        Aqui nascem sites simples, sólidos e livres.<br>
-        Nada é fechado. Nada é inflado. Tudo existe.
+        O Planeta do Arquiteto não entrega conteúdo pronto.
+        Ele entrega estrutura.
+        O preenchimento pertence ao humano.
       </p>
     </section>
 
-    <!-- BLOCO 2 -->
-    <section class="info-block">
-      <h2>O que é oferecido</h2>
+    <!-- BLOCO CONCEITO -->
+    <section class="bloco">
+      <h2>ARQUITETURA VIVA</h2>
       <p>
-        • Sites institucionais simples<br>
-        • Sites informativos (jornal, revista, projetos)<br>
-        • Estruturas digitais para empresas<br>
-        • Ambientes estáveis, rápidos e independentes
+        Cada bloco existe por necessidade.
+        Nada aqui é decorativo por acaso.
+        Tudo pode ser removido sem colapso.
       </p>
     </section>
 
-    <!-- BLOCO 3 -->
-    <section class="info-block">
-      <h2>Como funciona</h2>
+    <!-- ===== INSERÇÃO DO CYBORG ===== -->
+    <section class="cyborg-nucleo">
+      <img src="cyborg.webp" alt="Núcleo do Arquiteto">
+      <p class="cyborg-frase">
+        “Se eu me calo, reflita, mas não significa o fim.”
+      </p>
+    </section>
+    <!-- ===== FIM DO BLOCO CYBORG ===== -->
+
+    <!-- BLOCO FINAL -->
+    <section class="bloco">
+      <h2>PROCESSO DE EVOLUÇÃO</h2>
       <p>
-        Você recebe um site funcional.<br>
-        Pode editar, copiar, mover e hospedar onde quiser.<br>
-        Não depende de plataformas, mensalidades ou terceiros.
+        A estrutura permanece.
+        O sistema observa.
+        O arquiteto decide quando avançar.
       </p>
     </section>
 
-    <!-- BLOCO 4 -->
-    <section class="info-block">
-      <h2>Para quem é</h2>
-      <p>
-        Este ambiente é para pessoas, projetos e organizações que:<br><br>
-        • Querem autonomia digital<br>
-        • Não querem depender de plataformas fechadas<br>
-        • Valorizam simplicidade, controle e estabilidade<br>
-        • Preferem possuir do que alugar
-      </p>
-    </section>
+  </main>
 
-    <!-- BLOCO 5 -->
-    <section class="info-block">
-      <h2>Valores de referência</h2>
-      <p>
-        Os valores refletem estrutura, liberdade e proteção.<br><br>
-        • Site simples / institucional: <strong>R$ 2.000</strong><br>
-        • Site informativo / jornal / revista: <strong>R$ 5.000</strong><br>
-        • Estrutura para empresas: <strong>R$ 10.000+</strong><br>
-        • Projetos institucionais / governamentais: <strong>sob análise</strong>
-      </p>
-    </section>
+  <footer>
+    PLANET OF ARCHITECT — Núcleo Operacional
+  </footer>
 
-    <!-- BLOCO 6 — LIGAMENTOS -->
-    <section class="info-block">
-      <h2>Ligamentos ativos</h2>
-      <p>
-        Projetos existentes, conectados e acessíveis.<br>
-        Cada portal aponta para uma camada funcional.
-      </p>
-
-      <div class="portal-grid">
-        <a class="portal" href="https://x4blaushop.github.io/NIVEL0/" target="_blank">
-          <span>NÍVEL 0</span>
-        </a>
-
-        <a class="portal" href="https://x4blaushop.github.io/celula-do-dan/" target="_blank">
-          <span>CÉLULA DO DAN</span>
-        </a>
-
-        <a class="portal" href="https://x4blaushop.github.io/X4-DNA-v2026/" target="_blank">
-          <span>X4 DNA v2026</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- BLOCO 7 -->
-    <section class="info-block">
-      <h2>Contato direto</h2>
-      <p>
-        Conversa simples.<br>
-        Sem intermediários.<br>
-        Sem pressão.
-      </p>
-
-      <a class="whatsapp-btn" href="https://wa.me/5511978682202" target="_blank">
-        Falar no WhatsApp
-      </a>
-
-      <p class="pix">
-        Pix: <strong>11 97868-2202</strong>
-      </p>
-    </section>
-
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
