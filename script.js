@@ -1,99 +1,51 @@
-:root {
-  --dna-red: #ff3b3b;
-  --bg-dark: #000;
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+resizeCanvas();
+
+const letters = "01";
+const fontSize = 14;
+
+// +20% densidade
+let columns = Math.floor((canvas.width / fontSize) * 1.2);
+let drops = [];
+
+function initDrops() {
+  columns = Math.floor((canvas.width / fontSize) * 1.2);
+  drops = [];
+  for (let i = 0; i < columns; i++) {
+    drops[i] = Math.random() * canvas.height;
+  }
 }
 
-body {
-  background: var(--bg-dark);
-  color: var(--dna-red);
-  font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+initDrops();
+
+function drawMatrix() {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "#ff3b3b";
+  ctx.font = fontSize + "px monospace";
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.96) {
+      drops[i] = 0;
+    }
+    drops[i]++;
+  }
 }
 
-/* MATRIX */
-#matrix {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-}
+setInterval(drawMatrix, 45);
 
-main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.bloco {
-  border: 1px solid rgba(255, 59, 59, 0.35);
-  padding: 26px;
-  margin-bottom: 48px;
-  border-radius: 18px;
-  background: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 25px rgba(255, 59, 59, 0.15);
-}
-
-.bloco h2 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-}
-
-.bloco p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0.88;
-}
-
-/* PORTAIS */
-.portal-button {
-  display: inline-block;
-  padding: 12px 24px;
-  margin: 12px 8px 0 0;
-  color: var(--dna-red);
-  text-decoration: none;
-
-  background: transparent;
-  border: 1.5px solid rgba(255, 59, 59, 0.6);
-  border-radius: 6px;
-
-  box-shadow:
-    0 0 10px rgba(255, 59, 59, 0.35),
-    inset 0 0 6px rgba(255, 59, 59, 0.25);
-
-  transition: 
-    background 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease,
-    filter 0.35s ease;
-}
-
-/* Hover */
-.portal-button:hover {
-  color: #000;
-  background: rgba(255, 59, 59, 0.9);
-  box-shadow:
-    0 0 18px rgba(255, 59, 59, 1),
-    0 0 50px rgba(255, 59, 59, 0.5);
-  transform: translateY(-1px);
-}
-
-/* Clique = transição sutil (SEM teleportar) */
-.portal-button:active {
-  filter: brightness(1.4);
-  transform: scale(0.97);
-}
-
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 0.75rem;
-  opacity: 0.45;
-}
+window.addEventListener("resize", () => {
+  resizeCanvas();
+  initDrops();
+});
