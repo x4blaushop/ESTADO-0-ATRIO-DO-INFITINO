@@ -6,9 +6,9 @@ Ele representa uma **camada de organização**.
 
 ---
 
-## O que é o Planeta do Arquiteto
+## O que é o 3ST4D0 Z3RO 4TR1O DO INF17INO
 
-O **Planeta do Arquiteto** é um HUB estrutural.
+O **3ST4D0 Z3RO 4TR1O DO INF17INO** é um HUB estrutural.
 Um ponto de convergência que conecta ideias, células, projetos e sistemas
 sem centralizar controle, sem aprisionar fluxos e sem depender de plataformas específicas.
 
@@ -161,4 +161,4 @@ Criado por alguém que entendeu que tecnologia
 não precisa ser dominação,
 pode ser **extensão natural da consciência humana**.
 
-Bem-vindo ao Planeta do Arquiteto.
+Bem-vindo ao 3ST4D0 Z3RO 4TR1O DO INF17INO.
