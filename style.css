@@ -1,81 +1,87 @@
-:Raiz {
-  --verde-neon: #62ff8a;
-  --bg-escuro: #000;
+:root {
+  --neon-green: #62ff8a;
+  --bg-dark: #000;
 }
 
 /* RESET */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* CORPO */
 body {
-  background: var(--bg-escuro);
-  color: var(--verde-neon);
-  font-family: "Courier New", Courier, monospace;
+  background: var(--bg-dark);
+  color: var(--neon-green);
+  font-family: 'Courier New', Courier, monospace;
   overflow-x: hidden;
 }
 
-/* MATRIZ */
+/* MATRIX */
 #matrix {
   position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
 }
 
-/* CAMADA */
-.camada-planetaria {
+/* CAMADA DO PLANETA */
+.planet-layer {
   position: relative;
   z-index: 2;
+  min-height: 100vh;
   padding: 60px 20px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  align-items: center;
 }
 
 /* BLOCOS */
-.bloco {
-  border: 1px solid var(--verde-neon);
-  padding: 20px;
-  max-width: 800px;
+.info-block {
+  width: 100%;
+  max-width: 640px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid var(--neon-green);
+  padding: 24px;
+  box-shadow: 0 0 20px rgba(98, 255, 138, 0.25);
 }
 
-/* CATEGORIAS */
-.categorias {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* TEXTO */
+h1, h2 {
+  margin-bottom: 16px;
+  text-shadow: 0 0 8px var(--neon-green);
 }
 
-.categoria {
-  border: 1px dashed var(--verde-neon);
-  padding: 10px;
-}
-
-.categoria span {
-  font-size: 0.85em;
-  opacity: 0.8;
-}
-
-.categoria.destaque {
-  border: 2px solid var(--verde-neon);
-}
-
-/* NOTA */
-.nota {
-  margin-top: 15px;
-  font-size: 0.8em;
-  opacity: 0.7;
+p {
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 /* BOTÃO */
-.botao {
+.whatsapp-btn {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  border: 1px solid var(--verde-neon);
-  color: var(--verde-neon);
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: var(--neon-green);
+  color: #000;
   text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 12px var(--neon-green);
+  transition: all 0.25s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #000;
+  color: var(--neon-green);
+  outline: 1px solid var(--neon-green);
+}
+
+/* PIX */
+.pix {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  opacity: 0.85;
 }
