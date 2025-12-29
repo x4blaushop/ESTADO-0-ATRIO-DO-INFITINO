@@ -60,6 +60,26 @@ p {
   font-size: 0.95rem;
 }
 
+/* LINKS DAS CÉLULAS */
+.cell-links {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.cell-links li {
+  margin-bottom: 8px;
+}
+
+.cell-links a {
+  color: var(--neon-green);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--neon-green);
+}
+
+.cell-links a:hover {
+  opacity: 0.8;
+}
+
 /* BOTÃO */
 .whatsapp-btn {
   display: inline-block;
